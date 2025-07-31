@@ -7,7 +7,6 @@ fn main() {
     });
 
     println!("{:?}", handle.join().unwrap());
-
 }
 
 ```
