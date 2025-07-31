@@ -13,7 +13,8 @@ fn main() {
 
 ### Using Scoped Threads
 
-We can use [ScopedJoinedHandle](https://doc.rust-lang.org/std/thread/struct.ScopedJoinHandle.html)
+We can use [ScopedJoinedHandle](https://doc.rust-lang.org/std/thread/struct.ScopedJoinHandle.html) to launch some thread 
+& then retreive it's value without using `.join().unwrap()` inside `main()`
 
 ```rust
 use std::thread;
