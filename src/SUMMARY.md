@@ -1,6 +1,5 @@
 # Summary
 
-[Introduction](./introduction.md)
+[Miscellaneous](./introduction.md)
 
-- [Ownership](./ownership.md)
-- [Chapter 1](./chapter_1.md)
+- [Threads](./threads.md)
