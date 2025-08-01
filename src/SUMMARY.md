@@ -7,6 +7,6 @@
   - [Add](traits/Add.md)
   - [Drop](traits/Drop/Drop.md)
     - [Prevent Auto Calling](traits/Drop/prevent_auto_calling.md)
-  - [From](traits/From.md)
+  - [From](traits/From/From.md)
 - [Design Patterns](./patterns.md)
     - [Factory](patterns/factory.md)
