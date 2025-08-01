@@ -1,5 +1,5 @@
 # [Drop](https://doc.rust-lang.org/std/ops/trait.Drop.html)
-```rust
+```
 pub trait Drop {
     // Required method
     const fn drop(&mut self);
