@@ -1,9 +1,9 @@
 # Preventing Auto Drop Calling
 
-## Using `std::mem::forget`
+## Using <a href="https://doc.rust-lang.org/std/mem/fn.forget.html" target="_blank">forget</a>
 
 ```rust
-use std::mem;
+use std::mem::forget;
 
 struct User {
     name: String,
@@ -20,11 +20,10 @@ fn main() {
         name: "Alex".to_string(),
     };
     
-    mem::forget(user);
+    forget(user);
 }
 ```
-
-## Using `ManuallyDrop`
+## Using <a href="https://doc.rust-lang.org/std/mem/struct.ManuallyDrop.html" target="_blank">ManuallyDrop</a>
 
 ```rust
 use std::mem::ManuallyDrop;

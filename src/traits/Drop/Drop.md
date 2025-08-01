@@ -1,4 +1,4 @@
-# [Drop](https://doc.rust-lang.org/std/ops/trait.Drop.html)
+# <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html" target="_ blank">Drop</a>
 ```
 pub trait Drop {
     // Required method
