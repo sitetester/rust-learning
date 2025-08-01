@@ -20,7 +20,6 @@ fn main() {
         name: "Alex".to_string(),
     };
     
-    // Prevent Drop from being called
     mem::forget(user);
 }
 ```
