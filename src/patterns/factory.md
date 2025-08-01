@@ -33,10 +33,12 @@ impl Animal for Cat {
 }
 
 fn main() {
-    let animal = AnimalFactory::create_animal(AnimalType::Dog);
-    println!("{}", animal.describe());
+    let dog = AnimalFactory::create_animal(AnimalType::Dog);
+    println!("{}", dog.describe());
 
-    let animal = AnimalFactory::create_animal(AnimalType::Cat);
-    println!("{}", animal.describe());
+    let cat = AnimalFactory::create_animal(AnimalType::Cat);
+    println!("{}", cat.describe());
 }
 ```
+
+Why `Box<dyn Animal>` & why not simply `impl Animal` as return type ?
