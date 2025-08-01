@@ -44,8 +44,6 @@ use std::ops::Add;
 #[derive(Debug)]
 struct Point {x: f32, y: f32}
 
-// ```pub trait Add<Rhs = Self>```
-// Since the generic param defaults to `Self`, hence we don't provide any param here
 impl Add<Self> for Point {
     type Output = Self; // We want to return a `Point`
 
@@ -73,8 +71,6 @@ use std::ops::Add;
 #[derive(Debug)]
 struct Point {x: f32, y: f32}
 
-// ```pub trait Add<Rhs = Self>```
-// Since the generic param defaults to `Self`, hence we don't provide any param here
 impl Add<Point> for Point {
     type Output = Point; // We want to return a `Point`
 
