@@ -4,4 +4,6 @@
 
 - [Threads](./threads.md)
 - [Traits](./Drop.md)
-- [Patterns](./factory.md)
+- [Design Patterns](./patterns.md)
+    - [Factory](patterns/factory.md)
+    - [Iterator](patterns/iterator.md)
