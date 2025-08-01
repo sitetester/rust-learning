@@ -13,8 +13,8 @@ impl Drop for User {
 }
 
 fn take_ownership(user: User) {
-  println!("Inside take_ownership");
   // here, `take_ownership` will own the `user` instance
+  println!("Inside take_ownership");
 } // & it will be auto freed at end of it's scope
 
 
