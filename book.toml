@@ -1,5 +1,5 @@
 [book]
-authors = ["Site Tester"]
+authors = ["sitetester"]
 language = "en"
 src = "src"
 title = "Exploring Rust"
