@@ -45,7 +45,7 @@ use std::ops::Add;
 struct Point {x: f32, y: f32}
 
 impl Add<Self> for Point {
-    type Output = Self; // We want to return a `Point`
+    type Output = Self; // `Self` refers to current struct  
 
     fn add(self, rhs: Self) -> Self::Output {
         Point {
@@ -72,7 +72,7 @@ use std::ops::Add;
 struct Point {x: f32, y: f32}
 
 impl Add<Point> for Point {
-    type Output = Point; // We want to return a `Point`
+    type Output = Point; 
 
     fn add(self, rhs: Point) -> Self::Output {
         Point {
