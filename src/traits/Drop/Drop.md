@@ -1,5 +1,10 @@
-# [Drop trait](https://doc.rust-lang.org/std/ops/trait.Drop.html)
-
+# [Drop](https://doc.rust-lang.org/std/ops/trait.Drop.html)
+```
+pub trait Drop {
+    // Required method
+    const fn drop(&mut self);
+}
+```
 It's like a Destructor in Java. Used for cleanup.
 
 - **Auto called at end of scope (& in reverse order)**
