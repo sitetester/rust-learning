@@ -1,6 +1,6 @@
 # [Drop trait](https://doc.rust-lang.org/std/ops/trait.Drop.html)
 
-It's like a destructure in Java. Used for cleanup.
+It's like a Destructor in Java. Used for cleanup.
 
 - **Auto called at end of scope (& in reverse order)**
 ```rust
