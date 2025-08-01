@@ -8,5 +8,6 @@
   - [Drop](traits/Drop/Drop.md)
     - [Prevent Auto Calling](traits/Drop/prevent_auto_calling.md)
   - [From](traits/From/From.md)
+    - [Generic Point](traits/From/generic_point.md)
 - [Design Patterns](./patterns.md)
     - [Factory](patterns/factory.md)
