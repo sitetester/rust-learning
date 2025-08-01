@@ -1,5 +1,0 @@
-# Iterator Pattern
-
-```rust
-
-```
