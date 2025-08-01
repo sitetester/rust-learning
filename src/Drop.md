@@ -107,3 +107,45 @@ fn main() {
 
 ### How to prevent aut calling?
 Ether use [std::mem::forget](https://doc.rust-lang.org/std/mem/fn.forget.html) or [ManuallyDrop](https://doc.rust-lang.org/std/mem/struct.ManuallyDrop.html)
+
+- std::mem::forget
+```rust
+struct User {
+    name: String,
+}
+
+impl Drop for User {
+    fn drop(&mut self) {
+        println!("Drop called for {}", self.name);
+    }
+}
+
+fn main() {
+    let user = User {
+        name: "Alex".to_string(),
+    };
+    
+    // Note: `Drop` not called here
+    std::mem::forget(user);
+}
+```
+- ManuallyDrop
+```rust
+use std::mem::ManuallyDrop;
+
+struct User {
+    name: String,
+}
+
+impl Drop for User {
+    fn drop(&mut self) {
+        println!("Drop called for {}", self.name);
+    }
+}
+
+fn main() {
+    let user = ManuallyDrop::new(User {
+        name: "Jones".to_string(),
+    });
+}
+```
