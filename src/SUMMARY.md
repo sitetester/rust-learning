@@ -1,7 +1,5 @@
 # Summary
-
-[Miscellaneous](./introduction.md)
-
+[Home](./index.md)
 - [Threads](./threads.md)
 - [Traits](./traits.md)
   - [Drop](traits/Drop.md)
