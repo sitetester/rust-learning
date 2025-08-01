@@ -6,4 +6,3 @@
 - [Traits](./Drop.md)
 - [Design Patterns](./patterns.md)
     - [Factory](patterns/factory.md)
-    - [Iterator](patterns/iterator.md)
