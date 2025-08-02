@@ -43,7 +43,7 @@ fn main() {
 }
 ```
 
-- Box<dyn Animal> - Using Box / Owned trait objects
+- Box<&dyn Animal> - Boxed References to Trait Objects
 ```rust
 trait Animal {
     fn describe(&self) -> String;
@@ -69,18 +69,18 @@ fn main() {
     // Dog{} - struct instantiation, here a temporary instance
     // Box::new(Dog{}) - Will move the temporary instance on heap with it's own address 
     // Box<dyn Anima> = Box::new(Dog{} - coercion from Box<Dog> (thin pointer) to Box<dyn Animal> (fat pointer with data pointer + vtable pointer)
-    let animal: Box<dyn Animal> = Box::new(Dog{});
+    let animal: Box<&dyn Animal> = Box::new(&Dog{});
     println!("{}", animal.describe());
-    let animal: Box<dyn Animal> = Box::new(Cat{});
+    let animal: Box<&dyn Animal> = Box::new(&Cat{});
     println!("{}\n", animal.describe());
 
     println!("Using separate variables");
     let dog = Dog{};
     let cat = Cat{};
-    let animal: Box<dyn Animal> = Box::new(dog);
+    let animal: Box<&dyn Animal> = Box::new(&dog);
     // method calls are resolved via vtable
     println!("{}", animal.describe());
-    let animal: Box<dyn Animal> = Box::new(cat);
+    let animal: Box<&dyn Animal> = Box::new(&cat);
     println!("{}", animal.describe());
 }
 ```
