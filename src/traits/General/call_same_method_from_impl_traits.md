@@ -1,1 +1,1 @@
-# call_same_method_from_impl_traits.md
+# Call same method from impl traits
