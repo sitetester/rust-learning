@@ -6,6 +6,7 @@ Here any type T which implements `std::fmt::Debug` trait could have a custom met
 
 ```rust
 use std::collections::HashMap;
+
 trait MyPrinter {
     fn my_print(&self);
 }
