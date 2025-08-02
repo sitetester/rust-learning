@@ -1,5 +1,7 @@
 # Summary
 
+- [Collections](collections/collections.md)
+  - [Generic HashMap](collections/generic_HashMap.md)
 [Home](./index.md)
 - [Threads](threads/threads.md)
   - [thread_local!](threads/thread_local!.md)
