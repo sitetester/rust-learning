@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 ---
-- Param as array of functions (using Box)
+- Param as array of functions (using Box)  
 Since each closure has a distinct unique type in Rust, even if they have identical signatures, we use `dyn Fn(i32, i32) -> i32` syntax 
 to convert them into a trait object & thus the actual method call is resolved at runtime (dynamic dispatch). Box will store each on heap 
 & will us a fat pointer with a fixed / known size at compile time, which can be stored in stack. 
@@ -91,7 +91,7 @@ fn main() {
 }
 ```
 --- 
-- Param as array of functions (using function pointer)
+- Param as array of functions (using function pointer)  
 Here we specify closure type only once to help Rust compiler insert such closures with similar type.
 
 ```rust
