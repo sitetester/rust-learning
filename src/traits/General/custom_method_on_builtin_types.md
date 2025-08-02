@@ -20,4 +20,4 @@ fn main() {
 ```
 
 This is just one concrete example. Same can be done for other types. 
-Check - [blanket_implementation](blanket_implementation.md) for a generic implementation.
+Check - [blanket_implementation](blanket_implementation.md) for a generic use case.

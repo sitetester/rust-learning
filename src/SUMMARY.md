@@ -14,7 +14,7 @@
   - [Drop](traits/Drop/Drop.md)
     - [Prevent Auto Calling](traits/Drop/prevent_auto_calling.md)
   - [General](traits/General/general.md)
-    - [blanket_implementation](traits/General/blanket_implementation.md)
+    - [Blanket_implementation](traits/General/blanket_implementation.md)
     - [Call same method from impl traits](traits/General/call_same_method_from_impl_traits.md)
     - [Custom method on builtin types](traits/General/custom_method_on_builtin_types.md)
     - [Store struct instance into trait object](traits/General/store_struct_instance_into_trait_object.md)
