@@ -67,10 +67,13 @@ impl Animal for Cat {
 fn main() {
     println!("Using direct struct instantiation");
     // Dog{} - struct instantiation, here a temporary instance
-    // Box::new(Dog{}) - Will move the temporary instance on heap with it's own address 
+    // Box::new(Dog{}) - Will move the temporary instance on heap with its own address 
     // Box<dyn Anima> = Box::new(Dog{} - coercion from Box<Dog> (thin pointer) to Box<dyn Animal> (fat pointer with data pointer + vtable pointer)
-    let animal: Box<&dyn Animal> = Box::new(&Dog{});
+    let animal: Box<dyn Animal> = Box::new(Dog{});
     println!("{}", animal.describe());
+    
+    // can also do via referenced trait objects
+    // Box::new(&Cat{}) - boxes a reference to the temporary Cat instance (not the Cat itself)
     let animal: Box<&dyn Animal> = Box::new(&Cat{});
     println!("{}\n", animal.describe());
 
