@@ -20,6 +20,7 @@
     - [Call same method from impl traits](traits/General/calling_same_method_from_impl_traits.md)
     - [Custom method on builtin types](traits/General/custom_method_on_builtin_types.md)
     - [Store struct instance into trait object](traits/General/store_struct_instance_into_trait_object.md)
+    - [Sub Traits](traits/General/sub_traits.md)
   - [Index](traits/Index.md)
   - [From](traits/From.md)
 - [Design Patterns](./patterns.md)
