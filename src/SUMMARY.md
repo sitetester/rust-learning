@@ -8,7 +8,6 @@
   - [Function Pointer](functions/function_pointer.md)
   - [Take Fn or Closure](functions/take_fn_or_closure.md)
   - [Return Fn or Closure](functions/return_fn_or_closure.md)
-  - [Param takes array of functions](functions/param_takes_array_of_functions.md)
   - [Higher order functions](functions/higher_order_functions.md)
   
 - [Traits](./traits.md)

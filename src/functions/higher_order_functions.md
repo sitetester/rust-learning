@@ -59,5 +59,95 @@ fn main() {
         apply_op(|x, y| x / y, 20.2, 2.4)
     );
 }
+```
+---
+- Param as array of functions (using Box)
+Since each closure has a distinct unique type in Rust, even if they have identical signatures, we use `dyn Fn(i32, i32) -> i32` syntax 
+to convert them into a trait object & thus the actual method call is resolved at runtime (dynamic dispatch). Box will store each on heap 
+& will us a fat pointer with a fixed / known size at compile time, which can be stored in stack. 
+  
+```rust
+use std::collections::HashMap;
+
+fn apply_ops<T: Copy + std::fmt::Display>(ops: HashMap<&str, Box<dyn Fn(T, T) -> T>>, x: T, y: T) {
+    for (name, op) in ops {
+        println!("{}({}, {}): {}", name, x, y, op(x, y));
+    }
+}
+
+fn main() {
+    let add = |x, y| x + y;
+    let sub = |x, y| x - y;
+    let mul = |x, y| x * y;
+    let div = |x, y| x / y;
+
+    let mut ops: HashMap<&str, Box<dyn Fn(i32, i32) -> i32>> = HashMap::new();
+    ops.insert("add", Box::new(add));
+    ops.insert("sub", Box::new(sub));
+    ops.insert("mul", Box::new(mul));
+    ops.insert("div", Box::new(div));
+
+    apply_ops(ops, 2, 3);
+}
+```
+--- 
+- Param as array of functions (using function pointer)
+Here we specify closure type only once to help Rust compiler insert such closures with similar type.
+
+```rust
+use std::collections::HashMap;
+
+fn apply_ops<T: Copy + std::fmt::Display>(ops: HashMap<&str, fn(T, T) -> T>, x: T, y: T) {
+    for (name, op) in ops {
+        println!("{}({}, {}): {}", name, x, y, op(x, y));
+    }
+}
+
+fn main() {
+    type SIGNATURE = fn(i32, i32) -> i32;
+
+    let add = |x, y| x + y;
+    let sub = |x, y| x - y;
+    let mul = |x, y| x * y;
+    let div = |x, y| x / y;
+
+    // Each closure will have same signature
+    let mut ops: HashMap<&str, SIGNATURE> = HashMap::new();
+    ops.insert("add", add);
+    ops.insert("sub", sub);
+    ops.insert("mul", mul);
+    ops.insert("div", div);
+    apply_ops(ops, 2, 3);
+
+    println!("\nWith explicit annotation");
+    let add: SIGNATURE = |x, y| x + y;
+    let mut ops = HashMap::new(); // we didn't specify HashMap's type here
+    ops.insert("add", add);
+    ops.insert("sub", sub);
+    ops.insert("mul", mul);
+    ops.insert("div", div);
+    apply_ops(ops, 2, 3);
+
+    println!("\nWith explicit cast in definition");
+    let add = (|x, y| x + y) as SIGNATURE;
+    let mut ops = HashMap::new(); // we didn't specify HashMap's type here
+    ops.insert("add", add);
+    ops.insert("sub", sub);
+    ops.insert("mul", mul);
+    ops.insert("div", div);
+    apply_ops(ops, 2, 3);
+
+    println!("\nWith explicit cast during .insert()");
+    let add = |x, y| x + y;
+    let sub = |x, y| x - y;
+    let mul = |x, y| x * y;
+    let div = |x, y| x / y;
+    let mut ops = HashMap::new(); // we didn't specify HashMap's type here
+    ops.insert("add", add as SIGNATURE);
+    ops.insert("sub", sub);
+    ops.insert("mul", mul);
+    ops.insert("div", div);
+    apply_ops(ops, 2, 3);
+}
 
 ```
