@@ -124,8 +124,8 @@ fn main() {
     println!("\nWith explicit annotation");
     let add: SIGNATURE = |x, y| x + y;
     let mut ops = HashMap::new(); // we didn't specify HashMap's type here
-    // it has explicit SIGNATURE, after this insert, compiler will infer data type for HashMap
-    // & rest of the inserts will be auto cast to match Hashmap inferred type
+    // it has explicit SIGNATURE, after this insert, compiler will infer data type 
+    // for HashMap & rest of the inserts will be auto cast to match Hashmap inferred type
     ops.insert("add", add); 
     ops.insert("sub", sub); 
     ops.insert("mul", mul);
