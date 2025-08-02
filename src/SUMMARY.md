@@ -1,7 +1,8 @@
 # Summary
 
 [Home](./index.md)
-- [Threads](./threads.md)
+- [Threads](threads/threads.md)
+  - [thread_local!](threads/thread_local!.md)
 - [Functions](functions/functions.md)
   - [Fn keyword](functions/fn_keyword.md)
   - [Function Pointer](functions/function_pointer.md)
