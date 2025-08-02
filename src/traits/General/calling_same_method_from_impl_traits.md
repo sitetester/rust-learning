@@ -39,7 +39,7 @@ fn main() {
 ---
 - Enhanced case
 
-Here we add `impl SomeTrait1 for i32 {}` to enhance our example & also return type is updated to `some_method(&self) where Self: Debug` since 
+Here we add `impl SomeTrait1 for i32 {}` to enhance our example & also method signature is updated to `some_method(&self) where Self: Debug` since 
 there is a debug print for `self`, indicating concrete type must implement `std::fmt::Debug` trait.
 
 ```rust
@@ -88,3 +88,4 @@ fn main() {
     <i32 as SomeTrait2>::some_method(&i);
 }
 ```
+`self` refers to instance, actual value, while `Self` is the relevant type, e.g., SomeStruct, i32
