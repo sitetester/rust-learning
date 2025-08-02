@@ -92,7 +92,9 @@ fn main() {
 ```
 --- 
 - Param as array of functions (using function pointer)  
-Here we specify closure type only once to help Rust compiler insert such closures with similar type.
+Here we specify closure type only once to help Rust compiler insert such closure with similar type into a HashMap. Each closure will still 
+have it's own unique type, but after detecting type from first .insert(), rest of closures will be auto cast to match the type inferred 
+`HashMap<K, V>` signature.   
 
 ```rust
 use std::collections::HashMap;
@@ -111,7 +113,7 @@ fn main() {
     let mul = |x, y| x * y;
     let div = |x, y| x / y;
 
-    // Each closure will have same signature
+    // HashMap declared with explicit signature
     let mut ops: HashMap<&str, SIGNATURE> = HashMap::new();
     ops.insert("add", add);
     ops.insert("sub", sub);
@@ -122,8 +124,10 @@ fn main() {
     println!("\nWith explicit annotation");
     let add: SIGNATURE = |x, y| x + y;
     let mut ops = HashMap::new(); // we didn't specify HashMap's type here
-    ops.insert("add", add);
-    ops.insert("sub", sub);
+    // it has explicit SIGNATURE, after this insert, compiler will infer data type for HashMap
+    // & rest of the inserts will be auto cast to match Hashmap inferred type
+    ops.insert("add", add); 
+    ops.insert("sub", sub); 
     ops.insert("mul", mul);
     ops.insert("div", div);
     apply_ops(ops, 2, 3);
