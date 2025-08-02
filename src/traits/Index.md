@@ -12,6 +12,7 @@ where
     fn index(&self, index: Idx) -> &Self::Output;
 }
 ```
+---
 
 ```rust
 use std::ops::Index;

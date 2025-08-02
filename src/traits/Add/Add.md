@@ -8,6 +8,8 @@ pub trait Add<Rhs = Self> {
     const fn add(self, rhs: Rhs) -> Self::Output;
 }
 ```
+---
+
 - Using default generic param <Rhs = Self>
 ```rust
 use std::ops::Add;

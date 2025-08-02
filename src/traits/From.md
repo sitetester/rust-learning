@@ -7,6 +7,8 @@ pub trait From<T>: Sized {
     fn from(value: T) -> Self;
 }
 ```
+---
+
 Let's build a `Point` from `(f32, f32)` tuple
 ```rust
 #[derive(Debug)]

@@ -5,6 +5,8 @@ pub trait Drop {
     const fn drop(&mut self);
 }
 ```
+---
+
 It's like a Destructor in Java. Used for cleanup.
 
 - **Auto called at end of scope (& in reverse order)**
